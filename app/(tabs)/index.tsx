@@ -1,13 +1,5 @@
+import { Redirect } from "expo-router";
 
-import { Text, View } from '@/components/Themed';
-
-export default function TabOneScreen() {
-  return (
-    <View className='flex items-center justify-center'>
-      <Text className='text-5xl'>
-          Hello World!        
-      </Text>
-    </View>
-  );
+export default function TabIndex() {
+    return <Redirect href={'/(tabs)/menu'}/>
 }
-
