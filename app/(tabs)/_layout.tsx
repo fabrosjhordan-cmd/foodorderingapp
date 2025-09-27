@@ -4,7 +4,6 @@ import React from 'react';
 
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 import { useColorScheme } from '@/components/useColorScheme';
-import Colors from '@/constants/Colors';
 import { Feather, Fontisto } from '@expo/vector-icons';
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
@@ -21,7 +20,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: 'black',
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
@@ -33,7 +32,7 @@ export default function TabLayout() {
         name="menu"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <Feather name="home" color="#fff" size={18} />,
+          tabBarIcon: ({ color }) => <Feather name="home" color="#000" size={18} />,
           headerShown: false,
           // headerRight: () => (
           //   <Link href="/modal" asChild>
@@ -55,7 +54,7 @@ export default function TabLayout() {
         name="two"
         options={{
           title: 'Orders',
-          tabBarIcon: ({ color }) => <Fontisto name="list-1" color="#fff" size={18} />,
+          tabBarIcon: ({ color }) => <Fontisto name="list-1" color="#000" size={18} />,
         }}
       />
     </Tabs>

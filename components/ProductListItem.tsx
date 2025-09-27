@@ -10,7 +10,7 @@ const ProductListItem = ({product}: ProductListItemProps) => {
   
     return (
     <Link href={`/(tabs)/menu/${product.id}`} asChild>
-      <Pressable className='flex-1 rounded-md p-8 my-2 overflow-hidden' style={{ backgroundColor: "#ffffff" }}>
+      <Pressable className='flex-1 rounded-md p-8 my-2 overflow-hidden' style={{ backgroundColor: "#fff" }}>
           <Image 
             source={{uri: product.image || 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png'}}
             className='w-[100%] aspect-square self-center'
