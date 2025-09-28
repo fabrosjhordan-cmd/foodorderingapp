@@ -1,5 +1,5 @@
 import { Product } from "@/types";
-import { Link } from "expo-router";
+import { Link, useSegments } from "expo-router";
 import { Image, Pressable, Text } from "react-native";
 
 type ProductListItemProps  ={
@@ -7,9 +7,9 @@ type ProductListItemProps  ={
 }
 
 const ProductListItem = ({product}: ProductListItemProps) => {
-  
+    const segments = useSegments();
     return (
-    <Link href={`/(tabs)/menu/${product.id}`} asChild>
+    <Link href={`${segments[0]}/menu/${product.id}`} asChild>
       <Pressable className='flex-1 rounded-md p-8 my-2 overflow-hidden' style={{ backgroundColor: "#fff" }}>
           <Image 
             source={{uri: product.image || 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png'}}
