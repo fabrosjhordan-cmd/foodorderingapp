@@ -1,5 +1,5 @@
 import { Redirect } from "expo-router";
 
-export default function TabIndex() {
+export default function Logout() {
     return <Redirect href={'/(user)/menu'}/>
 }

@@ -36,7 +36,7 @@ export default function PizzaDetailScreen() {
           className='w-[100%] aspect-square self-center'
           resizeMode='contain'
         />
-        <Text className='my-4 font-semibold'>Select Size {id}</Text>
+        <Text className='my-4 font-semibold'>Select Size</Text>
         <View className='flex-row justify-around'>
             {sizes.map((size)=>(
               <Pressable

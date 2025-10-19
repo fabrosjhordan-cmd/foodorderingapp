@@ -37,10 +37,11 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="orders"
         options={{
           title: 'Orders',
           tabBarIcon: ({ color }) => <Fontisto name="list-1" color={color} size={18} />,
+          headerShown: false
         }}
       />
       <Tabs.Screen

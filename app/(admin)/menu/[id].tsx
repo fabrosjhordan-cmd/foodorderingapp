@@ -1,8 +1,8 @@
 import products from '@/assets/data/products';
-import Button from '@/components/Button';
 import { useCart } from '@/provider/CartProvider';
 import { PizzaSize } from '@/types';
-import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
+import { Feather } from '@expo/vector-icons';
+import { Link, Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { Image, Pressable, Text, View } from 'react-native';
 
@@ -30,27 +30,30 @@ export default function PizzaDetailScreen() {
 
   return (
     <View className='flex-1 p-4' style={{backgroundColor: '#fff'}}>
+        <Stack.Screen
+          options={{
+            headerRight: () =>(
+        <Link href={`/(admin)/menu/create?id=${id}`} asChild>
+              <Pressable>
+                {({ pressed })=> (
+                  <Feather name="edit" color="#FAA18F" size={24} />
+                )
+                }
+              </Pressable>
+          </Link>
+        ),
+            title: 'Menu'
+          }}
+        />
+
         <Stack.Screen options={{title: product.name}}/>
         <Image 
           source={{uri: product.image || defaultPizzaImage}}
           className='w-[100%] aspect-square self-center'
           resizeMode='contain'
         />
-        <Text className='my-4 font-semibold'>Select Size {id}</Text>
-        <View className='flex-row justify-around'>
-            {sizes.map((size)=>(
-              <Pressable
-                onPress={()=> setSelectedSize(size)}
-                key={size}
-                className='w-20 aspect-square rounded-full items-center justify-center'
-                style={{backgroundColor: size === selectedSize ? 'gainsboro' : 'white'}}
-              >
-              <Text className='text-xl font-semibold' style={{color: size === selectedSize ? 'black' : 'gray'}}>{size}</Text>
-              </Pressable>
-            ))}
-        </View>
-        <Text className='text-md font-bold mt-auto'>Price: ${product.price.toFixed(2)}</Text>
-        <Button onPress={addToCart} text='Add to cart' />
+        <Text className='text-2xl font-bold mt-4'>{product.name}</Text>
+        <Text className='text-md font-bold mt-4'>{product.price.toFixed(2)}</Text>
     </View>
   )
 }

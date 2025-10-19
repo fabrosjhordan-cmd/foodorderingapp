@@ -7,7 +7,12 @@ export default function MenuLayout() {
   return (
   <Stack 
   screenOptions={{ 
-    headerRight: () =>(
+    
+   }}>
+    <Stack.Screen 
+      name='index'
+      options={{
+        headerRight: () =>(
       <Link href='/(admin)/menu/create' asChild>
           <Pressable>
             {({ pressed })=> (
@@ -16,14 +21,11 @@ export default function MenuLayout() {
             }
           </Pressable>
       </Link>
-    )
-   }}>
-    <Stack.Screen 
-      name='index'
-      options={{
+    ),
         title: 'Menu'
       }}
     />
+    
     <Stack.Screen 
       name='create'
       options={{

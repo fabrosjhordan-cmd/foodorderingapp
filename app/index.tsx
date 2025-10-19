@@ -2,7 +2,7 @@ import Button from "@/components/Button"
 import { Link } from "expo-router"
 import { View } from "react-native"
 
-const index = () =>{
+const AuthIndex = () =>{
     
     return(
         <View className="flex-1 items-center justify-center p-10">
@@ -16,4 +16,4 @@ const index = () =>{
     )
 }
 
-export default index;
+export default AuthIndex;
