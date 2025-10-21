@@ -9,7 +9,7 @@ const OrderItemListitem = ({item} : OrderItemListItemProps) =>{
     const defaultPizzaImage = 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png' 
 
     return(
-        <View className="bg-white rounded-md p-5 flex-1 flex-row items-center">
+        <View className="bg-white rounded-md p-4 flex-1 flex-row items-center">
             <Image
                 source={{uri: item.products.image || defaultPizzaImage}}
                 className="w-[60px] aspect-square self-center mr-3"
@@ -23,7 +23,7 @@ const OrderItemListitem = ({item} : OrderItemListItemProps) =>{
                 </View>
             </View>
             <View className="flex-row items-center" style={{gap: 10, marginVertical: 10}}>
-                <Text className="text-xl font-semibold">{item.quantity}</Text>
+                <Text className="text-md font-semibold">{item.quantity}</Text>
             </View>
         </View>
     )

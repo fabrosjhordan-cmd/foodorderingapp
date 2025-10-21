@@ -12,6 +12,9 @@ const AuthIndex = () =>{
             <Link href={'/(admin)/menu'} asChild>
                 <Button text="Admin" />
             </Link>
+            <Link href={'/(auth)/signin'} asChild>
+                <Button text="Sign in" />
+            </Link>
         </View>
     )
 }

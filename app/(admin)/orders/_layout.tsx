@@ -9,5 +9,11 @@ export default function OrderLayout() {
         title: 'Orders'
       }}
     />
+    <Stack.Screen 
+      name='list'
+      options={{
+        headerShown: false
+      }}
+    />
   </Stack>
 )};
